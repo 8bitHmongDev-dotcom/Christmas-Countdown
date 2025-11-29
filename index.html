@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+  <title>Countdown until Christmas</title>
+</head>
+
+<div class="gif-overlay"></div>
+
+<body>
+  <div class="gif-overlay"></div>
+
+  <!-- Countdown Section -->
+  <div class="countdown-container">
+    <h1>There is</h1>
+
+    <div id="countdown" class="countdown" role="timer" aria-live="polite">
+      <div class="time">
+        <h2 id="days">00</h2>
+        <small>days</small>
+      </div>
+      <div class="time">
+        <h2 id="hours">00</h2>
+        <small>hours</small>
+      </div>
+      <div class="time">
+        <h2 id="minutes">00</h2>
+        <small>minutes</small>
+      </div>
+      <div class="time">
+        <h2 id="seconds">00</h2>
+        <small>seconds</small>
+      </div>
+    </div>
+
+    <h2 class="stocking-title">
+      until the 
+        <span class="christmas-text">   <!-- INSERT LAST NAME-->Family Christmas</span>
+    </h2>
+  </div>
+
+  <!-- Stockings -->
+  <section class="stocking-grid">
+    <div class="stocking">
+      <img src="./img/stocking.png" alt="Daddy's Christmas stocking">
+      <p>Daddy</p>
+    </div>
+    <div class="stocking">
+      <img src="./img/stocking.png" alt="Mommy's Christmas stocking">
+      <p>Mommy</p>
+    </div>
+    <div class="stocking">
+      <img src="./img/stocking.png" alt="Tobi's Christmas stocking">
+      <p>  <!-- CHILD NAME --></p>
+    </div>
+    <div class="stocking">
+      <img src="./img/stocking.png" alt="Lashia's Christmas stocking">
+      <p><!-- CHILD NAME --></p>
+    </div>
+  </section>
+
+  
+  <button id="playPauseButton" class="music-btn">
+    <img id="musicIcon" src="./img/play.png" alt="Play">
+  </button>
+
+
+  <img src="./img/spinner.gif" alt="Loading..." id="loading" class="loading" />
+
+  <script src="script.js"></script>
+</body>
+</html>

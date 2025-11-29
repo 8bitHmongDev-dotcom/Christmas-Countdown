@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+/* ------------------ GLOBAL ------------------ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('img/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Dark overlay */
+body::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+/* ------------------ FONTS ------------------ */
+body * {
+  font-family: 'Mountains of Christmas', cursive;
+  z-index: 1;
+}
+
+/* ------------------ COUNTDOWN ------------------ */
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  margin-top: 60px;
+}
+
+/* Heading */
+h1 {
+  font-size: clamp(50px, 8vw, 90px);
+}
+
+/* Countdown row */
+.countdown {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 900px;
+  gap: 40px;
+}
+
+/* Individual time blocks */
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;       /* spacing inside the box */
+  border: 2px solid rgba(255, 255, 255, 0.6); /* thin white border */
+  border-radius: 10px;      /* rounded corners */
+  background-color: rgba(255, 255, 255, 0.05); /* subtle transparent background */
+  min-width: 120px;         /* ensures boxes stay consistent size */
+  transition: transform 0.2s; /* optional hover effect */
+}
+
+.time:hover {
+  transform: scale(1.05); /* optional: slightly enlarge on hover */
+}
+
+.time h2 {
+  font-size: clamp(50px, 10vw, 120px);
+  margin: 0;
+  color: #fff;  /* ensures numbers stay white */
+}
+
+.time small {
+  font-size: clamp(16px, 2vw, 35px);
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* Stocking title */
+.stocking-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Animated Christmas text */
+.christmas-text {
+  font-weight: 700;
+  animation: christmasColors 2s infinite linear;
+}
+
+@keyframes christmasColors {
+  0% { color: #c40000; }
+  25% { color: #0a8a0a; }
+  50% { color: #d4af37; }
+  75% { color: #0aa0c4; }
+  100% { color: #c40000; }
+}
+
+/* ------------------ STOCKINGS ------------------ */
+.stocking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.stocking {
+  text-align: center;
+}
+
+.stocking img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.stocking p {
+  margin-top: 10px;
+  font-size: clamp(1rem, 2vw, 1.8rem);
+}
+
+/* ------------------ LOADING ------------------ */
+.loading {
+  display: none; /* show only if loading */
+  margin-top: 20px;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 500px) {
+  .countdown {
+    gap: 15px;
+  }
+  
+  .time h2 {
+    font-size: 50px;
+  }
+  
+  .time small {
+    font-size: 16px;
+  }
+
+  .stocking-title {
+    font-size: 1.8rem;
+  }
+  
+  .stocking p {
+    font-size: 1rem;
+  }
+}
+
+/* ------------------ Off Screen ------------------ */
+.year {
+  position: absolute;
+  left: -9999px;  /* move it way off-screen */
+}
+
+
+/* GIF overlay */
+.gif-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* so it doesn't block clicks */
+  background: url('./img/snow.gif') center/cover no-repeat;
+  opacity: .07; /* adjust transparency as needed */
+  z-index: 0;
+}
+
+/* Make sure your page content appears above it */
+body * {
+  position: relative;
+  z-index: 1;
+}
+
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: 0.3s;
+}
+
+.music-btn img {
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+}
+
+.music-btn:hover img {
+  opacity: 1;
+}
